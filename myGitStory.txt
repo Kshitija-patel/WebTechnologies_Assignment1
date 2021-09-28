@@ -1,0 +1,123 @@
+----- Initialize Repository -----
+// Initialize local git Repository
+git init
+
+// Add origin url copied from just created GIT Repo
+git remote add origin https://github.com/Kshitija-patel/WebTechnologies_Assignment1.git
+
+// checkout into master branch
+git checkout master
+
+// Make sure you are in sync with the origin Repo
+git pull origin master
+
+// After changes, add your file.
+git add *
+
+// commit your changes
+git commit -m "Hello Kshitija"
+
+// push your changes into master
+git push origin master
+
+----- Create branches -----
+
+// Make sure you're in master branch
+git branch
+
+// new branch
+git checkout -b separateCSS
+
+// after changes
+git add *
+git commit -m "separate css file created"
+git push origin separateCSS
+
+// Go back to master branch
+git checkout master
+// Make sure you have all the changes from master
+git pull origin master
+
+// new branch
+git checkout -b separateJS
+
+// after changes
+git add *
+git commit -m "separate js file created"
+git push origin separateJS
+
+
+----- Merge branches -----
+// Go back to master branch
+git checkout master
+
+// Pull all the changes from separateCSS branch
+git pull origin separateCSS
+
+// Push the changes into master branch (Merge separateCSS)
+git push origin master
+
+// Pull all the changes from separateJS branch
+git pull origin separateJS
+
+// Push the changes into master branch (Merge separateJS)
+git push origin master
+
+
+Answer to the question from stage 6>
+Although, I haven't faced any difficulties during the merge process of the branches...
+We might get conflicts in the Kshitija.html file if the changes are made on the same line in the different branches. 
+But we can resolve the conflicts by accepting incoming/current changes as per the requirements.
+
+
+Output of the command "git log --all"
+
+commit 720834a13e12d5a7483a6dd83d629db5bc8379e4 (HEAD -> master, origin/master)
+Merge: 62ae12c bd7e239
+Author: Kshitija-patel <kshitija.patel.kp@gmail.com>
+Date:   Tue Sep 28 17:24:37 2021 -0400
+
+    Merge branch 'separateJS' of https://github.com/Kshitija-patel/WebTechnologies_Assignment1
+
+commit bd7e239634c667f3bffb7766ec81a9c268564477 (origin/separateJS, separateJS)
+Author: Kshitija-patel <kshitija.patel.kp@gmail.com>
+Date:   Tue Sep 28 17:19:26 2021 -0400
+
+    separate js file created
+
+commit 62ae12c355f51257034751513c3c376c1b63fe70 (origin/separateCSS, separateCSS)
+Author: Kshitija-patel <kshitija.patel.kp@gmail.com>
+Date:   Tue Sep 28 17:16:10 2021 -0400
+
+    separate css file created
+
+commit fe784377d05de07b60312253380bb6d23b0d5f2d
+Author: Kshitija-patel <kshitija.patel.kp@gmail.com>
+Date:   Tue Sep 28 17:12:21 2021 -0400
+
+    Kshitija.html does it all
+
+commit 8d08598392e74b0f070780b2f6681098efe1ea94
+Author: Kshitija-patel <kshitija.patel.kp@gmail.com>
+Date:   Tue Sep 28 16:40:42 2021 -0400
+
+    used internal CSS to style  Kshitija.html
+
+commit ab920686bac4ddf65a25aeb6e64e0077a6c2a914
+Author: Kshitija-patel <kshitija.patel.kp@gmail.com>
+Date:   Tue Sep 28 15:53:31 2021 -0400
+
+    added stuff about cities
+
+commit 30dfcdaec9dcda43e93fd0bd6b0d37b7ec947214
+Author: Kshitija-patel <kshitija.patel.kp@gmail.com>
+Date:   Tue Sep 28 14:45:04 2021 -0400
+
+    Hello Kshitija
+
+commit 7e7212b907a4253ec6197330d46567004f2b1953
+Author: Kshitija-patel <55298718+Kshitija-patel@users.noreply.github.com>
+Date:   Tue Sep 28 14:43:28 2021 -0400
+
+    Initial commit
+(END)                                                                                                                  
