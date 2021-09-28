@@ -5,39 +5,79 @@
     <title>Assignment 1</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
-       
-        * {font-family: cursive; 
-            color: maroon;}
-        li {border: 1px dashed black;}
-        p {background-color:  #D3D3D3;}
-        h1,h2,h3 {font-family: 'Press Start 2P', cursive}
-        .techie { font-family: 'monospace';
-            font-size: 1.5em;}
+        * {
+            font-family: cursive;
+            color: maroon;
+        }
 
+        li {
+            border: 1px dashed black;
+        }
+
+        p {
+            background-color: #D3D3D3;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Press Start 2P', cursive
+        }
+
+        .techie {
+            font-family: 'monospace';
+            font-size: 1.5em;
+        }
     </style>
+
+    <script>
+        // script for adding an list item on clicking MORE button
+        window.onload = function () {
+            let moreBtn = document.getElementById("more-btn")
+            let listElement = document.getElementById("my-list")
+            moreBtn.addEventListener("click", function () {
+                let listItem = document.createElement("li")
+                listItem.innerHTML = "unknown";
+                listElement.appendChild(listItem)
+            })
+
+            // script for adding random four characters to the original text of span
+            let allSpan = document.querySelectorAll('span')
+            var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            for (let span of allSpan) {
+                span.innerHTML += " ";
+                // https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript
+                for (let i = 0; i < 4; i++) {
+                    span.innerHTML += characters.charAt(Math.floor(Math.random() * characters.length))
+                }
+            }
+        }
+    </script>
 </head>
 
 <body>
     <!--Creating h1 tag for name-->
-    <h1>Kshitija Patel (k-SHI-ti-jaa  pa-te-al  )</h1>
-    <!--<button>More</button>-->
+    <h1>Kshitija Patel (k-SHI-ti-jaa pa-te-al )</h1>
+    <button id="more-btn">MORE</button>
 
     <!--Creating numbered list for cities-->
     <h2>Cities</h2>
-    <ol>
+    <ol id="my-list">
         <li>Toronto</li>
         <li class="techie">Waterloo</li>
         <li class="techie">London</li>
         <li>Windsor</li>
     </ol>
-    
+
     <!--Creating paragraph for cities-->
     <h3>Details</h3>
-    <p> Mentioned above are the four major cities of <span>Ontario</span>. 
-        Toronto is the <span class="techie">capital</span> of Ontario. 
-        Waterloo city has major <span>tech companies</span>. 
-        London is home to my university, the <span class="techie">University of Western Ontario</span>. 
+    <p> Mentioned above are the four major cities of <span>Ontario</span>.
+        Toronto is the <span class="techie">capital</span> of Ontario.
+        Waterloo city has major <span>tech companies</span>.
+        London is home to my university, the <span class="techie">University of Western Ontario</span>.
         Windsor has a beautiful <span>riverside</span> in the city.</p>
+
 </body>
+
 
 </html>
